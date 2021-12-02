@@ -1,5 +1,6 @@
 from utils import load_file
 
+
 def main() -> None:
     dataset = load_file()
     window_size = 3
