@@ -40,6 +40,7 @@ def main() -> None:
 
     winning_board = None
     numbers_drawn = None
+    winning_boards = []
     try:
         for counter in range(len(numbers_to_draw)):
             for board in boards:
@@ -47,12 +48,17 @@ def main() -> None:
                     board=board, numbers_drawn=numbers_to_draw[:counter]
                 ):
                     winning_board, numbers_drawn = winner
-                    raise StopIteration
+                    if winning_board not in winning_boards:
+                        winning_boards.append(winning_board)
+                    if len(winning_boards) == len(boards):
+                        raise StopIteration
     except StopIteration:
         pass
 
     print(
-        _calculate_final_score(winning_board=winning_board, numbers_drawn=numbers_drawn)
+        _calculate_final_score(
+            winning_board=winning_boards[-1], numbers_drawn=numbers_drawn
+        )
     )
 
 

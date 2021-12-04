@@ -1,5 +1,5 @@
 def load_file() -> list[tuple[str, int]]:
-    with open('input', 'r') as file:
+    with open("input", "r") as file:
         dataset = [line.rstrip() for line in file]
 
     parsed_dataset = []

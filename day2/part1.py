@@ -9,11 +9,7 @@ def _sub(a: int, b: int) -> int:
     return a - b
 
 
-ACTIONS = {
-    "down": _add,
-    "forward": _add,
-    "up": _sub
-}
+ACTIONS = {"down": _add, "forward": _add, "up": _sub}
 HORIZONTAL_ACTIONS = ["forward"]
 DEPTH_ACTIONS = ["down", "up"]
 
